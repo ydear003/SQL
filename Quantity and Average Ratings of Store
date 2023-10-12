@@ -1,0 +1,36 @@
+#In this SQL, I am querying a table to quantify statistics about item specificity, pricing insights, stock and inventory, and product ratings#
+
+#What is the average price of all the items we have?#
+
+Select avg (price)
+From superstore;
+
+#Can you list down the items priced above $50?#
+
+Select price, item_name
+From superstore
+Where price> 50;
+
+#How many items are priced below $10?#
+Select price, item_name
+From superstore
+Where price < 10;
+
+#Which items have achieved a 4.5-star rating or above?#
+
+Select item_name, average_rating
+From superstore
+Where average_rating >4.4;
+
+#Are there items that have received poor ratings, say below 3 stars? If so, which are they?#
+Select item_name, average_rating
+From superstore
+Where average_rating <3;
+
+#What is the average rating of all products in our superstore?#
+Select avg (average_rating)
+From superstore;
+
+#Can you identify any correlation between the price of an item and its average rating?#
+SELECT CORR(price, average_rating)
+FROM superstore;
